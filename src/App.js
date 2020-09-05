@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
+import Header from './Header';
+import Nav from './Nav';
+import Results from './Results';
+import requests from "./requests";
+import InstagramEmbed from 'react-instagram-embed';
+
 
 function App() {
+
+  const [selectedOption, setSelectedOption] = useState(requests.fetchTrending);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Header/>
+
+    <Nav setSelectedOption = {setSelectedOption}/>
+
+    <Results 
+    selectedOption = {selectedOption}/>
+    <h1 className = "instaDevProfife developerh1">👇Developer👇</h1>
+    <InstagramEmbed
+    
+      className ="instaDevProfife"
+      url='https://www.instagram.com/p/Bd2PLONngVI/?utm_source=ig_web_copy_link'
+      maxWidth={320}
+      hideCaption={false}
+      containerTagName='div'
+      protocol=''
+      injectScript
+      onLoading={() => {}}
+      onSuccess={() => {}}
+      onAfterRender={() => {}}
+      onFailure={() => {}}
+/>
     </div>
   );
 }

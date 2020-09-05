@@ -1,0 +1,28 @@
+.header{
+    color: white;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: scroll;
+    /* font-family: 'Concert One', cursive; */
+    font-size: 2rem;
+   
+
+}
+.header::-webkit-scrollbar{
+    display: none;
+}
+.header{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    justify-content: center;
+}
+ 
+
+
+.header__icon > .MuiSvgIcon-root{
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
